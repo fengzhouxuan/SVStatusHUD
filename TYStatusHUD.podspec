@@ -15,12 +15,13 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "SVStatusHUD2"
-  s.version      = "0.1.1"
-  s.summary      = "SVStatusHUD mimics the HUD shown on orientation lock, mute and volume change on iOS."
+  s.name         = "TYStatusHUD"
+  s.version      = "0.2"
+  s.summary      = "TYStatusHUD mimics the HUD shown on orientation lock, mute and volume change on iOS."
 
   s.description  = <<-DESC
-					SVStatusHUD mimics the HUD shown on orientation lock, mute and volume change on iOS. It should only be used in response to hardware or other important notifications (for instance when an accessory is detected by your app). If you’re just looking to show the progress or success of an operation, you should have a look at SVProgressHUD.
+					TYStatusHUD mimics the HUD shown on orientation lock, mute and volume change on iOS. It should only be used in response to hardware or other important notifications (for instance when an accessory is detected by your app). 
+					forked from SVStatusHUD					
                    DESC
 
   s.homepage     = "https://github.com/northwind/SVStatusHUD"
