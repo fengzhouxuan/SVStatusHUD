@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SVStatusHUD2"
-  s.version      = "0.1"
+  s.version      = "0.1.1"
   s.summary      = "SVStatusHUD mimics the HUD shown on orientation lock, mute and volume change on iOS."
 
   s.description  = <<-DESC
