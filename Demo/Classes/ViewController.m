@@ -27,4 +27,8 @@
 	[SVStatusHUD showWithImage:[UIImage imageNamed:@"wifi"] status:@"Connected"];
 }
 
+- (IBAction)showWithStatusDuration:(id)sender {
+    [SVStatusHUD showWithStatus:@"Add another api to support case only have status." duration:2.0];
+}
+
 @end

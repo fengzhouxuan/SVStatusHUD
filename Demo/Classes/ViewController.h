@@ -12,6 +12,7 @@
 
 - (IBAction)showWithImage;
 - (IBAction)showWithImageStatus;
+- (IBAction)showWithStatusDuration:(id)sender;
 
 @end
 

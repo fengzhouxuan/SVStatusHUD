@@ -81,6 +81,11 @@ static SVStatusHUD *sharedView = nil;
     [SVStatusHUD showWithImage:image status:string duration:SVStatusHUDVisibleDuration];
 }
 
++ (void)showWithStatus:(NSString*)string duration:(NSTimeInterval)duration
+{
+    [SVStatusHUD showWithImage:nil status:string duration:duration];
+}
+
 + (void)showWithImage:(UIImage*)image status:(NSString*)string duration:(NSTimeInterval)duration {
     [[SVStatusHUD sharedView] showWithImage:image status:string duration:duration];
 }
@@ -106,22 +111,39 @@ static SVStatusHUD *sharedView = nil;
 	
     CGFloat hudWidth = 160;
     CGFloat hudHeight = 160;
-	
+
 	self.hudView.bounds = CGRectMake(0, 0, hudWidth, hudHeight);
 	
-    if(!string)
-        self.imageView.center = CGPointMake(self.hudView.bounds.size.width/2, self.hudView.bounds.size.height/2);
-    else
-        self.imageView.center = CGPointMake(self.hudView.bounds.size.width/2, 70);
-	
-	self.stringLabel.hidden = NO;
-	self.stringLabel.text = string;
+    self.stringLabel.hidden = NO;
+    self.stringLabel.text = string;
+    
+    if( string == nil ){
+        if ( imageView != nil ){
+            self.imageView.center = CGPointMake(hudWidth/2, hudHeight/2);
+        }
+    }else{
+        if ( imageView == nil ){
+            stringLabel.frame = CGRectMake(10, 0, hudWidth-10, hudHeight);
+        }else{
+            self.imageView.center = CGPointMake(hudWidth/2, 70);
+            stringLabel.frame = CGRectMake(0, 123, 160, 20);
+        }
+    }
+
 }
 
 
 - (void)showWithImage:(UIImage *)image status:(NSString *)string duration:(NSTimeInterval)duration {
 	
-	self.imageView.image = image;
+    if ( image == nil ){
+        if ( imageView != nil ){
+            [imageView removeFromSuperview];
+            [imageView release];
+            imageView = nil;
+        }
+    }else{
+        self.imageView.image = image;
+    }
     
 	[self setStatus:string];
     [self.overlayWindow setHidden:NO];

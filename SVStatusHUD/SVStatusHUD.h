@@ -13,6 +13,7 @@
 
 + (void)showWithImage:(UIImage*)image;
 + (void)showWithImage:(UIImage*)image status:(NSString*)string;
++ (void)showWithStatus:(NSString*)string duration:(NSTimeInterval)duration;
 + (void)showWithImage:(UIImage*)image status:(NSString*)string duration:(NSTimeInterval)duration;
 
 @end
